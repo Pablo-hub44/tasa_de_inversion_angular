@@ -1,0 +1,26 @@
+<form action="" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+        <p>
+            <label for="initial-inversion">Inversion Inicial</label>
+            <input type="number" id="initial-inversion" name="initial-inversion" [(ngModel)]="inversionInicial"/>
+        </p>
+        <p>
+            <label for="anual-inversion">Inversion Anual</label>
+            <input type="number" id="anual-inversion" name="anual-inversion" [(ngModel)]="inversionAnual">
+        </p>
+    </div>
+
+    <div class="input-group">
+        <p>
+            <label for="expected-return">Retorno esperado</label>
+            <input type="number" id="expected-return" name="expected-return" [(ngModel)]="retornoEsperado">
+        </p>
+        <p>
+            <label for="duracion">Duracion</label>
+            <input type="number" id="duration" name="duration" [(ngModel)]="duracion">
+        </p>
+    </div>
+    <p>
+        <button>Calcular</button>
+    </p>
+</form>

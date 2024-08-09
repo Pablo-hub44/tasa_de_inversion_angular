@@ -1,0 +1,32 @@
+<!-- si resultado es false ... esta con () pk estamos 'ejecutando' la señal cada q se una signal, las propiedades tienes en el html tienen que tener ()-->
+@if (!results()) {
+    <p class="center">Porfavor ingresa los valores y presiona Calcular.</p>
+}@else {
+    <div class="center">
+
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>Año</th>
+                    <th>Valor Invertido</th>
+                    <th>Interes anual</th>
+                    <th>Interes Total</th>
+                    <th>Capital invertido</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @for(resultado of results(); track resultado.year){
+                <tr>
+                    <td>{{resultado.year}}</td>
+                    <td>{{resultado.valueEndOfYear | currency:'MX'}}</td>
+                    <td>{{resultado.interest | currency:'MX'}}</td>
+                    <td>{{resultado.totalInterest | currency:'MX'}}</td>
+                    <td>{{resultado.totalAmountInvested | currency:'MX'}}</td>
+                </tr>
+            }
+            </tbody>
+           
+        </table>
+    </div>
+}
